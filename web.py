@@ -1,7 +1,10 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import urllib.request
+import pickle
 
+Nu_SVC_classifier = pickle.load(urllib.request.urlopen("https://drive.google.com/open?id=1M7Dt7CpEOtjWdHv_wLNZdkHw5Fxn83vW"))
 
 def rf_predict(data):
   if data == 0:
@@ -24,8 +27,8 @@ st.title("PREDIKSI KLASIFIKASI CYBERBULLYING")
 
 st.write("Cyberbulyying Dataset")
 st.dataframe(data)
-
-model = joblib.load("https://drive.google.com/file/d/12OSbIa8Bv3DEgO2oMUeq9KWgMb7PKt9S/view?usp=drive_link")
+model = pickle.load(urllib.request.urlopen("https://drive.google.com/file/d/12OSbIa8Bv3DEgO2oMUeq9KWgMb7PKt9S/view?usp=drive_link"))
+#model = joblib.load("https://drive.google.com/file/d/12OSbIa8Bv3DEgO2oMUeq9KWgMb7PKt9S/view?usp=drive_link")
 vector = joblib.load("vectorizer.pkl")
 
 with st.form("nlpForm"):

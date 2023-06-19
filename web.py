@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import urllib.request
 
 def rf_predict(data):
   if data == 0:
@@ -24,7 +25,7 @@ st.title("PREDIKSI KLASIFIKASI CYBERBULLYING")
 st.write("Cyberbulyying Dataset")
 st.dataframe(data)
 
-model = joblib.load(urlopen("https://drive.google.com/file/d/12OSbIa8Bv3DEgO2oMUeq9KWgMb7PKt9S/view?usp=drive_link"))
+model = joblib.load(urllib.request.urlopen("https://drive.google.com/file/d/12OSbIa8Bv3DEgO2oMUeq9KWgMb7PKt9S/view?usp=drive_link"))
 vector = joblib.load("vectorizer.pkl")
 
 with st.form("nlpForm"):

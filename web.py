@@ -25,7 +25,8 @@ st.title("PREDIKSI KLASIFIKASI CYBERBULLYING")
 st.write("Cyberbulyying Dataset")
 st.dataframe(data)
 
-model = joblib.load(urlopen("https://drive.google.com/file/d/12OSbIa8Bv3DEgO2oMUeq9KWgMb7PKt9S/view?usp=drive_link"))
+#model = joblib.load(urlopen("https://drive.google.com/file/d/12OSbIa8Bv3DEgO2oMUeq9KWgMb7PKt9S/view?usp=drive_link"))
+model = joblib.load("model_nb.pkl")
 vector = joblib.load("vectorizer.pkl")
 
 with st.form("nlpForm"):

@@ -21,7 +21,7 @@ df = pd.DataFrame(data)
 
 
 st.title("PREDIKSI KLASIFIKASI CYBERBULLYING")
-
+st.text("Web ini digunakan untuk prediksi jenis cyberbullying")
 st.write("Cyberbulyying Dataset")
 st.dataframe(data)
 
